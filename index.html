@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Image Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,700&family=Nunito:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header section -->
+    <header>NASA Image Explorer</header>
+
+    <!-- Filter buttons for categorizing images -->
+    <div id="filter-container">
+        <button class="filter-btn active" onclick="filterImages('all')">All</button>
+        <button class="filter-btn" onclick="filterImages('mars')">Mars</button>
+        <button class="filter-btn" onclick="filterImages('moon')">Moon</button>
+        <button class="filter-btn" onclick="filterImages('nebula')">Nebula</button>
+    </div>
+
+    <!-- Search bar -->
+    <div id="search-container">
+        <input type="text" id="search-bar" placeholder="Search Images...">
+        <button id="search-btn" onclick="searchImages()">Search</button>
+    </div>
+
+    <!-- Container for displaying the images -->
+    <div id="image-container"></div>
+
+    <!-- Modal for displaying selected image details -->
+    <div id="details-modal">
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Selected Image">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <button id="view-details-btn" onclick="openDetailsPage()">View Details</button>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Details page for displaying in depth information about the selected image -->
+    <div id="details-page">
+        <div class="page-content">
+            <img id="page-image" src="" alt="Selected Image...">
+            <h2 id="page-title"></h2>
+            <button id="download-btn"><a href="" download id="download" target="_blank">Download</a></button>
+            <p id="page-description"></p>
+            <p id="page-metadata"></p>
+            <button id="back-btn" onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+
+    <!-- Button to load more images into the image container -->
+    <button id="load-more-btn" onclick="loadMoreImages()">Load More</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

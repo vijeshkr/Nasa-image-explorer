@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Styles for header section */
+header {
+    color: #000;
+    padding: 16px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+/* Styles for filter and search containers */
+#filter-container, #search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* General styles for filter buttons, search bar, and search button */
+.filter-btn, #search-bar, #search-btn {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Style for filter buttons */
+.filter-btn {
+    background-color: #14b8a6;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #fff;
+    color: #14b8a6;
+    border: 1px solid #14b8a6;
+}
+
+.active:hover {
+    background-color: #14b8a6;
+    color: #fff;
+}
+
+.active {
+    background-color: #fff;
+    color: #14b8a6;
+    border: 1px solid #14b8a6;
+}
+
+#search-bar {
+    outline: none;
+    width: 100%;
+    max-width: 300px; /* Limit max width */
+    border: 1px solid #14b8a6;
+}
+
+#search-btn {
+    background-color: #14b8a6;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-btn:hover {
+    background-color: #078a7a;
+}
+
+/* Grid layout for displaying images */
+#image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styles for modal and details page */
+#details-modal, #details-page {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+#details-modal img {
+    height: 400px;
+    width: 100%;
+}
+
+#details-page img {
+    padding: 10px;
+    height: 300px;;
+}
+#details-modal h2 {
+    padding: 10px;
+}
+
+/* Styles for modal and page content */
+.modal-content, .page-content {
+    background: #fff;
+    margin: 20px;
+    border-radius: 8px;
+    max-width: 100%;
+    max-height: 90%;
+    text-align: center;
+    overflow-y: scroll; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+/* Styles for close and back buttons */
+.close-btn, #back-btn {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #14b8a6;
+    color: #fff;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+    border: none;
+    margin: 10px auto;
+}
+
+.close-btn:hover, #back-btn:hover {
+    background-color: #078a7a;
+}
+
+/* Styles for download, view details, and load more buttons */
+#download-btn, #view-details-btn, #load-more-btn {
+    display: block;
+    cursor: pointer;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #14b8a6;
+    color: #fff;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+#download-btn:hover, #view-details-btn:hover, #load-more-btn:hover {
+    background-color: #078a7a;
+}
+
+#download {
+    text-decoration: none;
+    color: white;
+}
+
+/* Styles for image cards */
+.image-card {
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+}
+
+.image-card img {
+    width: 100%;
+    max-height: 300px;
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.image-card h3 {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #14b8a6;
+}
+
+.image-card p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        font-size: 24px;
+    }
+
+    #filter-container, #search-container {
+        flex-direction: column;
+    }
+
+    #search-bar {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .filter-btn, #search-btn {
+        width: 90%;
+    }
+
+    .image-card {
+        padding: 0;
+    }
+    #details-page img{
+        width: 380px;
+    }
+}
+
+@media (max-width: 450px) {
+    #image-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-btn, #search-btn {
+        font-size: 14px;
+    }
+    #details-page img{
+        width: 300px;
+    }
+}
